@@ -28,7 +28,7 @@ CheckButton.Parent = Frame
 -- Функция для проверки ключа
 local function checkKey()
     local key = KeyInput.Text
-    local url = "https://f77dfd7b-039c-4efc-a9ef-a6638f9757db-00-fjavopd5ysfq.pike.replit.dev/check_key"
+    local url = "https://f77dfd7b-039c-4efc-a9ef-a6638f9757db-00-fjavopd5ysfq.pike.replit.dev/"
     local data = HttpService:JSONEncode({ key = key })
 
     local response = HttpService:PostAsync(url, data, Enum.HttpContentType.ApplicationJson)
