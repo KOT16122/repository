@@ -35,7 +35,12 @@ local function checkKey()
     local result = HttpService:JSONDecode(response)
 
     if result.status == "success" then
-        print("Ключ действителен!")
+        print("Ключ действителен! Загружаем скрипт...")
+        
+        -- Загружаем скрипт после успешной проверки ключа
+        local scriptUrl = 'https://raw.githubusercontent.com/KOT16122/generalscript/refs/heads/main/script.lua'
+        local scriptContent = HttpService:GetAsync(scriptUrl)
+        loadstring(scriptContent)()
     else
         print("Неверный ключ!")
     end
